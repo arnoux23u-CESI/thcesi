@@ -1,0 +1,92 @@
+\usepackage[cyr]{aeguill}
+\usepackage[french]{minitoc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[justification=centering,font=small,figurename=Fig.]{caption}
+
+\usepackage{color}
+\definecolor{linkcolor}{rgb}{0.0,0.0,0.0}
+
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{
+    colorlinks,%
+    citecolor=linkcolor,%
+    filecolor=linkcolor,%
+    linkcolor=linkcolor,%
+    urlcolor=linkcolor,%
+}
+
+\graphicspath{ {./img/} }
+
+\usepackage{listings}
+\lstset{language=C++,basicstyle=\small}
+
+\usepackage{silence}
+
+\WarningFilter{minitoc(hints)}{W0023}
+\WarningFilter{minitoc(hints)}{W0024}
+\WarningFilter{minitoc(hints)}{W0028}
+\WarningFilter{minitoc(hints)}{W0030}
+\WarningFilter{hyperref}{bookmark level}
+
+\WarningFilter{blindtext}{} % this takes care of the `blindtext` messages
+
+\makeatletter
+
+\newcommand\@CESIAddress{CESI École d'Ingénieurs\\ {\UseEntryFont{ThesisLabAddress}6 Rue Bois du Chêne le Loup\\ 54500 Vandoeuvre-lès-Nancy Cedex}\UseEntryFont{ThesisFirstPageHead}}
+
+\renewcommand{\@DFD}{\@CESIAddress \\Programme Grandes \'Ecoles\\ Sp\'ecialit\'e Informatique}
+
+
+\renewcommand{\@Nancyhe@d}{{\UseEntryFont{ThesisFirstPageHead}\noindent
+    \centerline{\if@logo@uhp@
+                    {\setbox0=\hbox{$\raise2.3cm\hbox{\CESILogo}$}%
+                     \ht0=\baselineskip\box0}\hfill
+                \else
+                    CESI École d'Ingénieurs%
+                \fi}%
+    \@TL@cmn@head\\
+    \par
+    }%
+    }
+
+
+\newcommand\TheseNancyI{\renewcommand{\@ThesisFirstPageHead}{\@Nancyhe@d}%
+                         \ThesisDiploma{{\UseEntryFont{ThesisDiploma}%
+                              \\[3mm]
+            {\UseEntryFont{ThesisSpecialty}( )}}}}
+
+\makeatother
+
+\ShiftOddPagesRight{-1mm}
+\ShiftOddPagesDown{2.5mm}
+\ShiftEvenPagesRight{0mm}
+\ShiftEvenPagesDown{0mm}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand\upun[1]{\uppercase{\underline{\underline{#1}}}}
+\FormatHeadingsWith\upun
+
+\newcommand\itheadings[1]{\textit{#1}}
+\FormatHeadingsWith{\itheadings}
+
+\setlength{\HeadRuleWidth}{0.4pt}
+
+
+\NoChapterNumberInRef \NoChapterPrefix
+
+
+
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+
+\ResetChaptersAtParts
+
+\NewJuryCategory{CompanySupervisors}{\it Company Supervisors :}{\it Company Supervisors:} 
+\NewJuryCategory{SchoolSupervisors}{\it School Supervisors :}{\it School Supervisors:} 
+
+\TheseNancyI
+
+

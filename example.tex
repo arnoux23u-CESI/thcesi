@@ -1,0 +1,97 @@
+\documentclass[12pt,oneside,noprintercorrection]{iut}
+
+\input{macros}
+
+\geometry{vmargin=2cm,hmargin=1cm}
+\mainmatter
+
+%-------------------------------------------------------------------
+%                         Title page
+%-------------------------------------------------------------------
+
+\ThesisTitle{Title}
+\ThesisKind{Type}
+\ThesisPresentedThe{publicly presented and defended on June 21, 2022}
+\ThesisAuthor{Jane DOE}
+\ThesisDiploma{University degree in computer technology}
+\CompanyName{Company}
+\CompanyLogo{logos/logo}
+\CompanySupervisors = {John DOE}
+\SchoolSupervisors = {John DOE}
+
+\begin{document}
+\MakeThesisTitlePage
+
+%-------------------------------------------------------------------
+%                          Empty page
+%-------------------------------------------------------------------
+
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+Laid out with thcesi class.
+\newpage
+
+%-------------------------------------------------------------------
+%                          Title page
+%-------------------------------------------------------------------
+
+\MakeThesisTitlePageNoLogo
+
+%-------------------------------------------------------------------
+%                          Acknowledgments
+%-------------------------------------------------------------------
+
+\begin{ThesisAcknowledgments}
+\thispagestyle{empty}
+Acknowledgments
+\end{ThesisAcknowledgments}
+
+%-------------------------------------------------------------------
+%                        Table of contents
+%-------------------------------------------------------------------
+
+\pagestyle{empty}
+\WritePartLabelInToc
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\clearpage
+\pagestyle{plain}
+\NoChapterHead
+
+%-------------------------------------------------------------------
+%                        	Introduction							
+%-------------------------------------------------------------------
+
+\SpecialSection{Introduction}
+Introduction
+
+\chapter{The company}
+\chapter{Needings}
+
+%-------------------------------------------------------------------
+%                        	Conclusion
+%-------------------------------------------------------------------
+
+\SpecialSection{Conclusion}
+
+%-------------------------------------------------------------------
+%                        	Glossary
+%-------------------------------------------------------------------
+
+\SpecialSection{Glossary}
+
+\begin{quote}
+\end{quote}
+
+%-------------------------------------------------------------------
+%                        	Appendix
+%-------------------------------------------------------------------
+
+\bibliographystyle{myunsrt}
+\small
+\bibliography{rapport}
+
+\Annex{Annex 1 - Data}
+
+\end{document}
